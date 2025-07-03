@@ -1,3 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ingreso | AmedicalPro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" 
+rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+</head>
+<body>
+<div class="login-wrapper">
+  <div class="card">
+    <!-- Logo -->
+    <img src="{{ url_for('static', filename='logo.png') }}"
+         style="max-width:160px;display:block;margin:0 auto 1rem">
+    <h2>Ingreso a AmedicalPro</h2>
+    <form method="POST">
+      <input name="username" placeholder="Usuario" required>
+      <input name="password" type="password" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+      {% if error %}<p style="color:red;text-align:center">{{ error }}</p>{% endif %}
+    </form>
+  </div>
+</div>
+</body>
+</html>
 
 <!DOCTYPE html>
 <html>
