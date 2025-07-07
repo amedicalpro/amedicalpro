@@ -32,7 +32,17 @@ rel="stylesheet">
   <div class="layout">
     <aside id="sidebar">
       <!-- Mini-calendario y lista médicos se inyectan vía JS -->
-      <div id="miniCalendar"></div>
+      <div id="miniCalendar" class="mc-wrapper">
+  <div class="mc-header">
+    <button data-step="-12">≪</button>
+    <button data-step="-1">‹</button>
+    <span id="mcTitle"> </span>
+    <button data-step="1">›</button>
+    <button data-step="12">≫</button>
+  </div>
+  <div id="miniGrid"></div>
+</div>
+
       <input id="medSearch" placeholder="Buscar…" />
       <ul id="medList"></ul>
       <button id="btnNew" class="btn-full">+ Nueva cita</button>

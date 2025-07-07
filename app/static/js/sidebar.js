@@ -5,16 +5,33 @@ document.addEventListener('DOMContentLoaded', () => {
     sidebar.classList.toggle('collapsed');
   };
 
-  /* Mini-calendar (simple) */
-  const mini = new FullCalendar.Calendar(document.getElementById('miniCalendar'), {
-    initialView: 'dayGridMonth',
-    height: 'auto',
-    headerToolbar: { left: 'prev', center: 'title', right: 'next' },
-    dateClick(info) {
-      mainCalendar.gotoDate(info.date);
-    }
-  });
-  mini.render();
+/* ==== MINI-CALENDARIO COMPACTO ==== */
+const mc = new FullCalendar.Calendar(document.getElementById('miniGrid'), {
+  initialView: 'dayGridMonth',
+  locale: 'es',
+  firstDay: 1,          // lunes
+  headerToolbar: false,
+  dayHeaders: true,
+  height: 'auto',
+  fixedWeekCount: false,
+  dateClick(info) {           // clic día → va a la agenda
+    mainCalendar.gotoDate(info.date);
+  },
+  datesSet: updateMcTitle     // refresca título "Julio 2025"
+});
+mc.render();
+
+function updateMcTitle(arg){
+  const d = arg.view.currentStart;
+  document.getElementById('mcTitle')
+    .textContent = d.toLocaleDateString('es-ES',
+      { month: 'long', year: 'numeric' });
+}
+
+/* Flechas ≪ ‹ › ≫ */
+document.querySelectorAll('.mc-header button').forEach(btn=>{
+  btn.onclick = () => mc.incrementDate({ months: +btn.dataset.step });
+});
 
   /* Agenda principal */
   const mainCalendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
