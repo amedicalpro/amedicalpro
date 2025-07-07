@@ -162,17 +162,9 @@ button{padding:.5rem;border:none;border-radius:4px;color:#fff;font-weight:600;cu
   padding:.35rem 1.25rem; cursor:pointer; white-space:nowrap;
 }
 .ctx-menu li:hover{ background:#f1f5f9; }
-/* VISIBILIDAD NÚMEROS Y CABECERA DEL MINI-CALENDARIO */
-#miniGrid .fc-daygrid-day-number{
-  display:block;
-  width:100%;
-  line-height:26px;      /* centra verticalmente el número */
-  text-align:center;
-  font-size:.75rem;
-  color:#1D2433;         /* gris-oscuro legible */
-}
-#miniGrid .fc-col-header-cell-cushion{
-  padding:0;             /* quita relleno extra en la fila 'L M X…' */
+/* Corrige color fijo de barra superior */
+.topbar {
+  background: #0d3a66 !important;
 }
 
 
