@@ -44,6 +44,44 @@ document.querySelectorAll('.mc-header button').forEach(btn=>{
     }
   });
   mainCalendar.render();
+/* ====== MENÚ CONTEXTUAL SOBRE CITA ====== */
+const calEl = document.getElementById('calendar');   // id del div principal
+
+calEl.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+
+  const eventEl = e.target.closest('.fc-event');
+  if (!eventEl) return;                       // clic derecho en zona vacía -> ignora
+
+  const evt = mainCalendar.getEventById(eventEl.getAttribute('data-event-id'));
+
+  // Construir menú
+  const menu = document.createElement('ul');
+  menu.className = 'ctx-menu';
+  menu.innerHTML = `
+    <li data-act="confirmar">Confirmar</li>
+    <li data-act="no-llega">No asiste</li>
+    <li data-act="borrar">Eliminar</li>`;
+  document.body.append(menu);
+
+  // Posicionarlo donde hiciste clic
+  menu.style.left = e.pageX + 'px';
+  menu.style.top  = e.pageY + 'px';
+
+  // Gestionar clics del menú
+  menu.onclick = (ev) => {
+    const act = ev.target.dataset.act;
+    if (act === 'confirmar')  evt.setProp('backgroundColor', '#22c55e'); // verde
+    if (act === 'no-llega')   evt.setProp('backgroundColor', '#9ca3af'); // gris
+    if (act === 'borrar')     evt.remove();
+
+    menu.remove();            // cerrar menú
+  };
+
+  // Cerrar si haces clic fuera
+  document.addEventListener('click', () => menu.remove(), { once: true });
+});
+
 
   /* FAB abre modal */
   document.getElementById('fab').onclick = () => openModal();
