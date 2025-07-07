@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}AmedicalPro{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" 
+rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <!-- Barra superior fechas -->
+  <header class="topbar">
+    <button id="sidebarToggle">☰</button>
+    <div class="week-nav">
+      <button id="prevWeek">◀</button>
+      <span id="weekLabel"> </span>
+      <button id="nextWeek">▶</button>
+    </div>
+    <div class="legend">
+      <span class="chip azul">Agendado</span>
+      <span class="chip verde">Confirmado</span>
+      <span class="chip amarillo">Pagado</span>
+      <span class="chip calipso">Espera</span>
+      <span class="chip celeste">Atendido</span>
+      <span class="chip gris">No llega</span>
+    </div>
+  </header>
+
+  <!-- Sidebar + contenido -->
+  <div class="layout">
+    <aside id="sidebar">
+      <!-- Mini-calendario y lista médicos se inyectan vía JS -->
+      <div id="miniCalendar"></div>
+      <input id="medSearch" placeholder="Buscar…" />
+      <ul id="medList"></ul>
+      <button id="btnNew" class="btn-full">+ Nueva cita</button>
+      <div id="countToday" class="count-box">Pacientes hoy: 0</div>
+    </aside>
+
+    <main class="content">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  <!-- Botón flotante -->
+  <button id="fab">＋</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
+
+
