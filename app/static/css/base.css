@@ -133,4 +133,15 @@ button{padding:.5rem;border:none;border-radius:4px;color:#fff;font-weight:600;cu
 .modal-card{
   box-shadow:0 8px 24px rgba(0,0,0,.25);/* resalta la tarjeta */
 }
+/* Ajuste fino: mostrar números del mini-calendario */
+#miniGrid .fc-daygrid-day-number{
+  position:absolute;      /* se coloca sobre la celda */
+  top:2px; left:0; right:0;
+  line-height:inherit;
+  text-align:center;
+  font-size:.75rem;
+}
+#miniGrid .fc-daygrid-day{
+  position:relative;      /* referencia para el número */
+}
 
