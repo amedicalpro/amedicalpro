@@ -177,6 +177,32 @@ button{padding:.5rem;border:none;border-radius:4px;color:#fff;font-weight:600;cu
 /* Corrige color fijo de barra superior */
 .topbar {
   background: #0d3a66 !important;
+}/* -------------------------------------------------
+   BOTÓN "ENTRAR"  (login)
+--------------------------------------------------*/
+.card button{
+  width:100%;
+  padding:.6rem;
+  border:none;
+  border-radius:4px;
+  background:var(--primary);      /* azul corporativo */
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
 }
+.card button:hover{
+  background:var(--primary-light);/* azul un poco más claro */
+}
+
+/* -------------------------------------------------
+   FONDO GRADIENTE (login y resto de páginas)
+--------------------------------------------------*/
+body{
+  margin:0;
+  /* degradado 135°   celeste → azul claro   */
+  background:linear-gradient(135deg,#0099cc 0%,#00ccff 100%);
+  color:var(--text);
+}
+
 
 
