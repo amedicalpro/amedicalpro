@@ -1,0 +1,57 @@
+<!-- Modal para Crear / Editar Cita -->
+<div class="modal hidden" id="citaModal">
+  <div class="modal-card">
+    <button class="close">&times;</button>
+
+    <h3>Nueva cita</h3>
+
+    <form id="citaForm">
+      <label>RUT
+        <input name="rut"          placeholder="11.111.111-1" 
+required>
+      </label>
+
+      <label>Nombre
+        <input name="nombre"       placeholder="Nombre y Apellido" 
+required>
+      </label>
+
+      <label>Teléfono
+        <input name="telefono"     placeholder="+56 9 1234 5678">
+      </label>
+
+      <label>Previsión
+        <select name="prevision">
+          <option>Fonasa</option>
+          <option>Isapre</option>
+          <option>Particular</option>
+        </select>
+      </label>
+
+      <label>Prestación
+        <select name="prestacion">
+          <option>Consulta médica</option>
+          <option>Procedimiento</option>
+        </select>
+      </label>
+
+      <label>Precio
+        <input name="precio" type="number" min="0" step="1000" 
+placeholder="$">
+      </label>
+
+      <label>Observaciones
+        <textarea name="obs" rows="3"></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="save azul">Guardar</button>
+        <button type="button" class="confirm verde">Confirmar</button>
+        <button type="button" class="cobrar amarillo">Cobrar</button>
+        <button type="button" class="espera calipso">Espera</button>
+        <button type="button" class="delete gris">Eliminar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
