@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       /* ——— Al hacer clic en un slot abre el modal ——— */
       dateClick(info) {
         // Limpia el formulario y abre la ventana
-        document.getElementById('citaForm').reset();
-        openModal();
+        document.getElementById('citaForm').reset();   
       },
 
       /* —— Ejemplo de click en evento (cita ya creada) —— */
