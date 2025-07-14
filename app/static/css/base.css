@@ -57,24 +57,47 @@ body{margin:0;background:var(--bg);color:var(--text);}
 4px 12px rgba(0,0,0,.2);}
 
 /* Modal */
-/* Modal (overlay + tarjeta) */
 .modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.45);   /* oscurece el fondo de agenda */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:2000;
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.5);   /* + oscura */
+  display:flex; align-items:center; justify-content:center;
+  z-index:1000;
 }
+.hidden{display:none;}
 
 .modal-card{
-  background:#fff;              /* opaco */
-  padding:1.5rem;
-  border-radius:8px;
-  width:560px;                  /* más ancha que antes */
+  background:#fff;
+  padding:2rem;
+  border-radius:10px;
+  width:720px;          /* NUEVO ancho */
   max-width:95%;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
   position:relative;
+  font-size:.95rem;
+}
+/* grid de filas */
+.modal-card .row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+  margin-bottom:1rem;
+}
+.modal-card label{display:flex;flex-direction:column;font-weight:600;}
+.modal-card input, .modal-card select, .modal-card textarea{
+  margin-top:.25rem;
+  padding:.45rem;
+  border:1px solid #ccc;
+  border-radius:4px;
+  font-size:1rem;
+}
+.actions{
+  display:flex;gap:.5rem;justify-content:flex-start;margin-top:1rem;
+}
+.close{
+  position:absolute;top:8px;right:8px;
+  background:none;border:none;font-size:1.25rem;cursor:pointer;
+}
+
 }/* -------- Layout 2 columnas dentro del modal --------------------- 
 */
 .grid-2col{
