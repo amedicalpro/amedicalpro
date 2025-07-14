@@ -1,43 +1,43 @@
-/* ----------------------------- CALENDARIO 
------------------------------ */
+// ========================= CALENDARIO =========================
 document.addEventListener('DOMContentLoaded', () => {
-  const mainCalendar = new FullCalendar.Calendar(
-    document.getElementById('calendar'),
-    {
-      initialView: 'timeGridWeek',
-      locale: 'es',
-      slotMinTime: '08:00:00',
-      slotMaxTime: '20:00:00',
-      selectable: true,
+    const mainCalendar = new FullCalendar.Calendar(
+        document.getElementById('calendar'),
+        {
+            initialView: 'timeGridWeek',
+            locale: 'es',
+            slotMinTime: '08:00:00',
+            slotMaxTime: '20:00:00',
+            selectable: true,
 
-      /* ——— Al hacer clic en un slot abre el modal ——— */
-      dateClick(info) {
-        // Limpia el formulario y abre la ventana
-        document.getElementById('citaForm').reset();   
-      },
+            // Al hacer clic en un slot libre, muestra el modal
+            dateClick(info) {
+                document.getElementById('citaForm').reset();
+                openModal();
+            },
 
-      /* —— Ejemplo de click en evento (cita ya creada) —— */
-      eventClick(info) {
-        // TODO: rellenar el formulario con los datos de la cita
-        openModal();
-      },
-    }
-  );
+            // Clic en evento creado (puedes expandir lógica aquí)
+            eventClick(info) {
+                openModal();
+            }
+        }
+    );
 
-  mainCalendar.render();
+    mainCalendar.render();
 });
 
-/* ----------------------------- MODAL ----------------------------- 
-*/
+// ========================= MODAL =========================
+
+// Función para mostrar el modal
 function openModal() {
-  document.getElementById('citaModal').classList.remove('hidden');
+    document.getElementById('citaModal').classList.remove('hidden');
 }
 
+// Función para cerrar el modal
 function closeModal() {
-  document.getElementById('citaModal').classList.add('hidden');
+    document.getElementById('citaModal').classList.add('hidden');
 }
 
-/* Botón de cierre ( × ) */
+// Botón de cierre (X)
 document.querySelector('#citaModal .close').addEventListener('click', 
 closeModal);
 
