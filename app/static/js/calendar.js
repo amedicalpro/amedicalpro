@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Al hacer clic en un slot libre, muestra el modal
             dateClick(info) {
-                document.getElementById('citaForm').reset();
+               console.log("Haz hecho clic en un slot:", info.dateStr); 
+document.getElementById('citaForm').reset();
                 openModal();
             },
 
