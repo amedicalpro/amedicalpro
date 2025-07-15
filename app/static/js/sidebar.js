@@ -87,7 +87,7 @@ calEl.addEventListener('contextmenu', (e) => {
   document.getElementById('fab').onclick = () => openModal();
 
   /* Modal */
-  const modal = document.getElementById('modal');
+  const modal = document.getElementById('citaModal');
   document.getElementById('modalClose').onclick = () => modal.classList.add('hidden');
   modal.querySelector('.save').onclick = e => {
     e.preventDefault();
@@ -95,9 +95,9 @@ calEl.addEventListener('contextmenu', (e) => {
     // Aquí guardarías vía fetch/AJAX…
   };
 
-  function openModal(start, end){
+function openModal(start, end){
+    const modal = document.getElementById('citaModal');
     modal.classList.remove('hidden');
     // rellenar campos si es necesario…
-  }
-});
+}
 
