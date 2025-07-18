@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
       slotMinTime: '08:00:00',
       slotMaxTime: '20:00:00',
       selectable: true,
-
+      
+      slotLabelFormat: { hour: '2-digit', minute: '2-digit', hour12: false },
+      slotLabelInterval: '01:00',
+      slotDuration: '01:00:00',
+     
       // clic sobre un hueco libre
       dateClick(info) {
         console.log('dateClick', info.dateStr);
