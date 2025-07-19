@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* ───────── Calendario principal ───────── */
   const mainCalendar = new FullCalendar.Calendar(
     document.getElementById('calendar'),
     {
@@ -8,18 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
       locale: 'es',
       slotMinTime: '08:00:00',
       slotMaxTime: '20:00:00',
-      selectable: true,
-      slotDuration: '00:20:00',          // cada 20 minutos
-      slotLabelInterval: '01:00',        // etiqueta visible sólo cada hora (mantiene 
-limpio)
-      slotLabelFormat: { hour: '2-digit', minute: '2-digit', hour12: false },
-      scrollTime: '08:00:00',            // al cargar desplaza hasta las 08:00
-      expandRows: true,                  // evita que la última se deforme, reparte alto
 
-      
-      slotLabelFormat: { hour: '2-digit', minute: '2-digit', hour12: false },
-      slotLabelInterval: '01:00',
-      slotDuration: '01:00:00',
+      slotDuration: '00:20:00',          // cada 20 minutos
+      slotLabelInterval: '01:00',        // mostrar etiqueta cada hora
+      slotLabelFormat: {                 // formato de la etiqueta
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      },
+      scrollTime: '08:00:00',
+      expandRows: true,
+      selectable: true,
      
       // clic sobre un hueco libre
       dateClick(info) {
