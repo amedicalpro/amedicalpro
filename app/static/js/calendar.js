@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slotMaxTime: '20:00:00',
 
       slotDuration: '00:20:00',          // cada 20 minutos
-      slotLabelInterval: '01:00',        // mostrar etiqueta cada hora
+      slotLabelInterval: '00:20:00',        // mostrar etiqueta cada hora
       slotLabelFormat: {                 // formato de la etiqueta
         hour: '2-digit',
         minute: '2-digit',
