@@ -256,6 +256,72 @@ body{
 body.login{
   background: linear-gradient(135deg,#0099cc 0%,#00ccff 100%);
 }
+/* =========================================================
+   SLOTS DE 20 MIN Y ESTILOS DE EVENTOS (Agenda principal)
+   ========================================================= */
+
+/* Altura fija de cada bloque de 20 minutos */
+.fc .fc-timegrid-slot {
+  height: 40px;
+  max-height: 40px;
+  padding: 0;
+}
+
+/* Etiqueta de la hora (columna izquierda) centrada vertical */
+.fc .fc-timegrid-slot-label {
+  line-height: 40px;
+  font-size: .80rem;
+  font-weight: 500;
+  color: #0d2238;
+}
+
+/* (Opcional) leve diferenciación visual – desactiva si no te gusta */
+.fc .fc-timegrid-slot:nth-child(odd) {
+  background: #f9fbfd;
+}
+
+/* Estilos base de los eventos (citas) */
+.fc .fc-event {
+  font-size: .70rem;
+  line-height: 1.05;
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px solid #1d6fd8;
+  background: linear-gradient(90deg,#1976d2,#2196f3);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Permitir varias líneas (nombre + prestación) */
+.fc .fc-event-title,
+.fc .fc-event-time {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Segunda línea para la prestación (cuando la agreguemos vía eventContent) */
+.fc .fc-event .prestacion {
+  font-weight: 400;
+  opacity: .85;
+  margin-top: 2px;
+  display: block;
+  font-size: .60rem;
+  line-height: 1.05;
+}
+
+/* Ajustes cuando se seleccionan varios slots (selección de rango) */
+.fc .fc-timegrid-col-frame .fc-highlight {
+  background: rgba(25,118,210,.18);
+}
+
+/* Hover opcional sobre slot vacío (feedback visual) */
+.fc .fc-timegrid-col-frame:hover {
+  cursor: pointer;
+}
 
 
 
